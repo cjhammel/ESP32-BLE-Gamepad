@@ -26,15 +26,15 @@ static const uint8_t _hidReportDescriptor[] = {
   USAGE(1),            0x01, //   USAGE (Pointer)
   COLLECTION(1),       0x00, //   COLLECTION (Physical)
   REPORT_ID(1),        0x01, //     REPORT_ID (1)
-  // ------------------------------------------------- Buttons (1 to 14)
+  // ------------------------------------------------- Buttons (1 to 13)
   USAGE_PAGE(1),       0x09, //     USAGE_PAGE (Button)
   USAGE_MINIMUM(1),    0x01, //     USAGE_MINIMUM (Button 1)
-  USAGE_MAXIMUM(1),    0x0e, //     USAGE_MAXIMUM (Button 14)
+  USAGE_MAXIMUM(1),    0x0d, //     USAGE_MAXIMUM (Button 13)
   LOGICAL_MINIMUM(1),  0x00, //     LOGICAL_MINIMUM (0)
   LOGICAL_MAXIMUM(1),  0x01, //     LOGICAL_MAXIMUM (1)
   REPORT_SIZE(1),      0x01, //     REPORT_SIZE (1)
-  REPORT_COUNT(1),     0x0e, //     REPORT_COUNT (14)
-  HIDINPUT(1),         0x02, //     INPUT (Data, Variable, Absolute) ;14 button bits
+  REPORT_COUNT(1),     0x0d, //     REPORT_COUNT (13)
+  HIDINPUT(1),         0x02, //     INPUT (Data, Variable, Absolute) ;13 button bits
   // ------------------------------------------------- Padding
   REPORT_SIZE(1),      0x01, //     REPORT_SIZE (1)
   REPORT_COUNT(1),     0x02, //     REPORT_COUNT (2)
