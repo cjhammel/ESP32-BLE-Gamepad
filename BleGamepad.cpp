@@ -20,7 +20,21 @@
 #endif
 
 static const uint8_t _hidReportDescriptor[] = {
-  USAGE_PAGE(1),       0x01, // USAGE_PAGE (Generic Desktop)
+ 0x05, 0x01, //; USAGE_PAGE (Generic Desktop)
+ 0x09, 0x05, //; USAGE (Gamepad)
+ 0xA1, 0x01, //; COLLECTION (Application)
+ 0x05, 0x09,// ; USAGE_PAGE (Button)
+ 0x19, 0x01, //; USAGE_MINIMUM (Button 1)
+ 0x29, 0x09, //; USAGE_MAXIMUM (Button 9)
+ 0x15, 0x00, //; LOGICAL_MINIMUM (0)
+ 0x25, 0x01, //; LOGICAL_MAXIMUM (1)
+ 0x75, 0x01, //; REPORT_SIZE (1)
+ 0x95, 0x09, //; REPORT_COUNT (9)
+ 0x81, 0x02, //; INPUT (Data,Var,Abs)
+ 0x95, 0x07, // REPORT_COUNT (7)
+ 0x81, 0x03, // INPUT (Cnst,Var,Abs)
+ 0xC0,// ; END_COLLECTION
+ /* USAGE_PAGE(1),       0x01, // USAGE_PAGE (Generic Desktop)
   USAGE(1),            0x05, // USAGE (Gamepad)
   COLLECTION(1),       0x01, // COLLECTION (Application)
   USAGE(1),            0x01, //   USAGE (Pointer)
@@ -60,7 +74,7 @@ static const uint8_t _hidReportDescriptor[] = {
   REPORT_COUNT(1),     0x02, //     REPORT_COUNT (2)
   HIDINPUT(1),         0x02, //     INPUT (Data, Variable, Absolute) ;2 bytes rX, rY
 
-  /*USAGE_PAGE(1),       0x01, //     USAGE_PAGE (Generic Desktop)
+  USAGE_PAGE(1),       0x01, //     USAGE_PAGE (Generic Desktop)
   USAGE(1),            0x39, //     USAGE (Hat switch)
   USAGE(1),            0x39, //     USAGE (Hat switch)
   LOGICAL_MINIMUM(1),  0x01, //     LOGICAL_MINIMUM (1)
@@ -68,10 +82,10 @@ static const uint8_t _hidReportDescriptor[] = {
   REPORT_SIZE(1),      0x04, //     REPORT_SIZE (4)
   REPORT_COUNT(1),     0x02, //     REPORT_COUNT (2)
   HIDINPUT(1),         0x02, //     INPUT (Data, Variable, Absolute) ;1 byte Hat1, Hat2
-  */
+  
 
-  END_COLLECTION(0),         //     END_COLLECTION
-  END_COLLECTION(0)          //     END_COLLECTION
+  END_COLLECTION(0),         //     END_COLLECTION */
+  END_COLLECTION(0)          //     END_COLLECTION 
 };
 
 BleGamepad::BleGamepad(std::string deviceName, std::string deviceManufacturer, uint8_t batteryLevel) :
